@@ -11,29 +11,60 @@
     app.onactivated = function (args) {
         WinJS.UI.processAll().then(function () {
             var tabataTemplate = document.getElementById("tabata-template-container").winControl;
-            var basicTabata = Data.getTabata(8, 10, 20, 10);
+            var basicTabata = Data.getBasicTabata();
             tabataTemplate.render(basicTabata, document.body);
-            // computerTemplate.render(secondComputerObservable, document.body);
-            var counter = 0;
-            var intervalID;
 
-            intervalID=setInterval(function () {
-                //make this is the first thing you do in the set interval function
-                counter++;
-                basicTabata.work -= 1;
-                //do you code for setInterval() and clearInterval under normal conditions here...
-                //okay, if we have tried for 5 minutes (30 x 10 seconds ), then lets stop trying because we did not reach the clearInterval under number means           
-                //make this the last check in your set interval function            
-                if (counter >= 20) {
-                    clearInterval(intervalID);
-                }
-                //end setInterval            
-            }, 1000);
+            var intervals = basicTabata.intervals;
 
-            //setInterval(function () {
-            //       
-            //    }, 1000,20)
-        })}
+            var workingTime = basicTabata.work;
+            var intervalID = 0;
 
-            app.start();
-    })();
+            var startButton = document.getElementById("start");
+
+            startButton.addEventListener("click", function () {
+                cycleIntervals();
+            });
+
+            //startButton.click();
+            //for (var i = 0; i < intervals - 1; i++) {
+            //    //WinJS.UI.S
+            //    clickButton();
+            //}
+
+            var cycles = 0;
+            function cycleIntervals() {
+                innerCycle().then(function () {
+                    cycles++;
+                    if (cycles < intervals) {
+                        cycleIntervals();
+                    }
+                });
+            }
+
+            //function clickButton() {
+            //    setTimeout(function () {
+            //        startButton.click()
+            //    }, 21000);
+            //}
+
+
+            function innerCycle() {
+                return new WinJS.Promise(function () {
+                    var counter = 0;
+                    intervalID = setInterval(function () {
+
+                        counter++;
+                        basicTabata.workleft -= 1;
+
+                        if (counter >= workingTime) {
+                            clearInterval(intervalID);
+                            basicTabata.workleft = 20;
+                        }
+                        //end setInterval            
+                    }, 1000);
+                })
+            }
+        })
+    }
+    app.start();
+})();
