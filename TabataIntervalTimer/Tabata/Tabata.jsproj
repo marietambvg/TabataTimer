@@ -65,6 +65,7 @@
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
+    <Content Include="pages\home\homecodebehind.js" />
     <None Include="Tabata_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
