@@ -32,15 +32,17 @@
             //}
 
             var cycles = 0;
-            function cycleIntervals() {
-                innerCycle().then(function () {
-                    cycles++;
-                    if (cycles < intervals) {
-                        cycleIntervals();
-                    }
-                });
-            }
 
+            function cycleIntervals() {
+
+                cycles++;
+                innerCycle();
+                //if (cycles < intervals) {
+                //    cycleIntervals();
+                //}
+            };
+
+            
             //function clickButton() {
             //    setTimeout(function () {
             //        startButton.click()
@@ -58,11 +60,11 @@
 
                         if (counter >= workingTime) {
                             clearInterval(intervalID);
-                            basicTabata.workleft = 20;
+                            basicTabata.workleft = workingTime;
                         }
                         //end setInterval            
                     }, 1000);
-                })
+                });
             }
         })
     }

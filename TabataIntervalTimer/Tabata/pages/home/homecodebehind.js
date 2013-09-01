@@ -7,6 +7,8 @@
     }
 
     var startTimer = function () {
+        //WinJS.Navigation.navigate("/pages/home/home.html");
+
         var tabataTemplate = document.getElementById("tabata-template-container").winControl;
         var basicTabata = Data.getBasicTabata();
         var contentHolder = document.getElementById("content");
@@ -55,7 +57,7 @@
     
     }
 
-    WinJS.Utilities.markSupportedForProcessing(goToComputerDetailsPage);
+    WinJS.Utilities.markSupportedForProcessing(startTimer);
 
     WinJS.Namespace.define("HomeCodeBehind", {
         //callLoadComputers: function () {

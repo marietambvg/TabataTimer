@@ -28,8 +28,8 @@
             intervals: 8,
             rest: 10,
             restleft: 10,
-            work: 20,
-            workleft: 20,
+            work: 5,
+            workleft: 5,
             prepare: 10
         });
     }
