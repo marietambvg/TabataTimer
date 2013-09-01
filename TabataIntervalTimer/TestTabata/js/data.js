@@ -1,6 +1,7 @@
 ﻿(function () {
 
     var tabata = {
+        tabatas: 0,
         intervals: 0,
         rest: 0,
         restleft: 0,
@@ -12,8 +13,9 @@
 
     var ObservableTabata = WinJS.Binding.define(tabata);
 
-    var getTabata = function (intervals, rest, work, prepare) {
+    var getTabata = function (tabatas, intervals, rest, work, prepare) {
         return new ObservableTabata({
+            tabatas: tabatas,
             intervals: intervals,
             rest: rest,
             restleft:rest,
@@ -25,12 +27,13 @@
 
     var getBasicTabata = function () {
         return new ObservableTabata({
+            tabatas: 2,
             intervals: 3,
-            rest: 10,
-            restleft: 10,
-            work: 5,
-            workleft: 5,
-            prepare: 10
+            rest: 3,
+            restleft: 3,
+            work: 3,
+            workleft: 3,
+            prepare: 3
         });
     }
 
