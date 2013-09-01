@@ -58,14 +58,29 @@
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
+    <Content Include="images\tabata-create.jpg" />
+    <Content Include="images\tabata-custom.jpg" />
+    <Content Include="images\tabata-standard.jpg" />
+    <Content Include="js\defaultcodebehind.js" />
     <Content Include="js\data.js" />
+    <Content Include="js\datalayer.js" />
     <Content Include="js\default.js" />
+    <Content Include="js\models.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="js\viewmodels.js" />
+    <Content Include="pages\addtabata\addtabata.css" />
+    <Content Include="pages\addtabata\addtabata.html" />
+    <Content Include="pages\addtabata\addtabata.js" />
+    <Content Include="pages\addtabata\addtabatacodebehind.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
     <Content Include="pages\home\homecodebehind.js" />
+    <Content Include="pages\playtabata\playtabata.css" />
+    <Content Include="pages\playtabata\playtabata.html" />
+    <Content Include="pages\playtabata\playtabata.js" />
+    <Content Include="pages\playtabata\playtabatacodebehind.js" />
     <None Include="Tabata_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

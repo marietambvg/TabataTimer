@@ -14,13 +14,30 @@
 
     <script src="/pages/home/home.js"></script>
     <script src="homecodebehind.js"></script>
-    <script src="../../js/data.js"></script>
-
 
 </head>
 <body>
     <!-- The content that will be loaded and displayed. -->
     <div class="fragment homepage">
+
+        <div id="tabatas-details-template-container" data-win-control="WinJS.Binding.Template">
+            <!-- The above is just a container, classes and styles from it are not applied to the inner elements. 
+            The actual template is the innerHTML -->
+            <div class="basic-tabata-template">
+                <dl>
+                    <dt>Name</dt>
+                    <dd data-win-bind="innerText: name"></dd>
+                    <dt>Intervals</dt>
+                    <dd data-win-bind="innerText: intervals"></dd>
+                    <dt>Work time</dt>
+                    <dd data-win-bind="innerText: work"></dd>
+                    <dt>Rest time</dt>
+                    <dd data-win-bind="innerText: rest"></dd>
+                    <dt>Prepare time</dt>
+                    <dd data-win-bind="innerText: prepare"></dd>
+                </dl>
+            </div>
+        </div>
 
 
         <header aria-label="Header content" role="banner">
@@ -28,26 +45,17 @@
             <h1 class="titlearea win-type-ellipsis">
                 <span class="pagetitle">Welcome to Tabata!</span>
             </h1>
-
         </header>
-        <div id="tabata-template-container" data-win-control="WinJS.Binding.Template">
-                <!-- The above is just a container, classes and styles from it are not applied to the inner elements. 
-            The actual template is the innerHTML -->
-                <div class="basic-tabata-template">
-                    <dl>
-                        <dt>Time to work</dt>
-                        <dd data-win-bind="innerText: work"></dd>
-                        <dt>Time left</dt>
-                        <dd data-win-bind="innerText: workleft"></dd>
-                    </dl>
 
-                </div>
-            </div>
         <section aria-label="Main content" role="main">
-            <p id="content"></p>
-            
-            <button id="start">Start workout</button>
-
+            <div data-win-control="WinJS.UI.ListView"
+                data-win-options="{
+                    itemDataSource: ViewModels.tabatas.dataSource,
+                    itemTemplate: select('#tabatas-details-template-container'),
+                    oniteminvoked: HomeCodeBehind.goToTabataDetailsPage,
+                    selectionMode: 'none'
+                }">
+            </div>
         </section>
     </div>
 </body>

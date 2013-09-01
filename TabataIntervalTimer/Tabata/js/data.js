@@ -34,7 +34,7 @@
         });
     }
 
-    WinJS.Namespace.define("Data", {
+    WinJS.Namespace.define("Datalayer", {
         getTabata: getTabata,
         getBasicTabata: getBasicTabata
     }
