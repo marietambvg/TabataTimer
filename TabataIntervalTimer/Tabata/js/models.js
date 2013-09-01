@@ -1,15 +1,15 @@
 ﻿(function () {
     var TabataModel = WinJS.Class.define(function (name, intervals, rest, work, prepare) {
-        
+
         this.name = name;
         this.intervals = intervals;
-        this.rest= rest;
-        this.restleft= rest;
-        this.work= work;
-        this.workleft= work;
-        this.prepare= prepare
+        this.rest = rest;
+        this.restleft = rest;
+        this.work = work;
+        this.workleft = work;
+        this.prepare = prepare;
     }, {
-        name:"",
+        name: "",
         intervals: 8,
         rest: 10,
         restleft: 10,

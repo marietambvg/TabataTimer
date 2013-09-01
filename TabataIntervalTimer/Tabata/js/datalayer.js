@@ -4,7 +4,8 @@
             new Models.TabataModel("standard triple",12,10,20,10),
             new Models.TabataModel("standard half",4,10,20,10),
             new Models.TabataModel("ironman half",4,10,50,10),
-            new Models.TabataModel("ironman triple",12,10,50,10),
+            new Models.TabataModel("ironman triple", 12, 10, 50, 10),
+            new Models.TabataModel("quick test", 2, 3, 3, 3),
     ]
 
     var getTabatas = function () {

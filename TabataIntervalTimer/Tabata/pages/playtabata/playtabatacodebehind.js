@@ -1,30 +1,125 @@
 ﻿(function () {
 
     var startTimer = function (currentTabata, startButton) {
-       
-        var workTime = currentTabata.work;
+
+        var tabatasCounterElement = document.getElementById("tabatas-count");
+        var tabatasCounter = 1;
+        tabatasCounterElement.innerHTML = tabatasCounter;
 
         var intervalID = 0;
-
         startButton.addEventListener("click", function () {
-            innerCycle();
+            tabatasCycle().then(function () {
+                tabatasCounter = 1;
+                tabatasCounterElement.innerHTML = tabatasCounter;
+            });
         });
-        
 
-        function innerCycle() {
-            var counter = 0;
-            intervalID = setInterval(function () {
+        function tabatasCycle() {
+            var complete, error;
+            var promise = new WinJS.Promise(function (c, e) {
+                complete = c;
+                error = e;
+            });
+            var intervals = currentTabata.intervals;
+            var prepareTime = currentTabata.prepare;
 
-                counter++;
-               currentTabata.workleft -= 1;
+            function recursiveCall() {
+                intervalsCycle().then(function () {
+                    currentTabata.prepare = prepareTime;
+                    currentTabata.intervals = intervals;
+                    tabatasCounter -= 1;
+                    tabatasCounterElement.innerHTML = tabatasCounter;
+                    if (tabatasCounter <= 0) {
+                        complete();
+                    }
+                    else {
+                        recursiveCall();
+                    }
+                });
+            }
+            recursiveCall();
 
-                if (counter >= workTime) {
-                    clearInterval(intervalID);
-                }
-            }, 1000);
+            return promise;
         }
 
-    }
+        function intervalsCycle() {
+            var complete, error;
+            var promise = new WinJS.Promise(function (c, e) {
+                complete = c;
+                error = e;
+            });
+
+            prepareCount().then(function () {
+                recursiveCycle();
+            });
+
+            function recursiveCycle() {
+                workRestCycle().then(function () {
+                    currentTabata.intervals -= 1;
+                    if (currentTabata.intervals <= 0) {
+                        complete();
+                    }
+                    else {
+                        recursiveCycle();
+                    }
+                });
+            };
+
+            return promise;
+        };
+
+        function workRestCycle() {
+            return new WinJS.Promise(function (complete, error) {
+
+                workingCount().then(function () {
+                    currentTabata.workleft = currentTabata.work;
+                    restingCount().then(function () {
+                        currentTabata.restleft = currentTabata.rest;
+                        complete();
+                    });
+                });
+            });
+        }
+
+        function prepareCount() {
+            return new WinJS.Promise(function (complete, error) {
+                intervalID = setInterval(function () {
+                    currentTabata.prepare -= 1;
+
+                    if (currentTabata.prepare <= 0) {
+                        clearInterval(intervalID);
+                        complete();
+                    }
+                }, 1000);
+            });
+        };
+
+        function workingCount() {
+            return new WinJS.Promise(function (complete, error) {
+                intervalID = setInterval(function () {
+                    currentTabata.workleft -= 1;
+
+                    if (currentTabata.workleft <= 0) {
+                        clearInterval(intervalID);
+                        complete();
+                    }
+                }, 1000);
+            });
+        }
+
+        function restingCount() {
+            return new WinJS.Promise(function (complete, error) {
+                intervalID = setInterval(function () {
+                    currentTabata.restleft -= 1;
+
+                    if (currentTabata.restleft <= 0) {
+                        clearInterval(intervalID);
+                        complete();
+                    }
+                }, 1000);
+            });
+        }
+    };
 
     var playTabata = function (currentTabata) {
 
