@@ -81,6 +81,8 @@
     <Content Include="pages\playtabata\playtabata.html" />
     <Content Include="pages\playtabata\playtabata.js" />
     <Content Include="pages\playtabata\playtabatacodebehind.js" />
+    <Content Include="sounds\ring.mp3" />
+    <Content Include="sounds\wakeup.mp3" />
     <None Include="Tabata_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

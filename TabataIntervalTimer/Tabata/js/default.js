@@ -7,8 +7,9 @@
 
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
-    var nav = WinJS.Navigation;
 
+    var nav = WinJS.Navigation;
+    
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {

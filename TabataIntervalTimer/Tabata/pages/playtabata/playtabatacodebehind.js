@@ -14,6 +14,15 @@
             });
         });
 
+        var canvas;
+        var ctx;
+        var restSound = new Audio("/sounds/ring.mp3");
+        restSound.loop = false;
+        var workSound = new Audio("/sounds/wakeup.mp3");
+        workSound.loop = false;
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+
         function tabatasCycle() {
             var complete, error;
             var promise = new WinJS.Promise(function (c, e) {
@@ -73,6 +82,9 @@
 
                 workingCount().then(function () {
                     currentTabata.workleft = currentTabata.work;
+                    //play rest sound
+                    restSound.play();
+                   
                     restingCount().then(function () {
                         currentTabata.restleft = currentTabata.rest;
                         complete();
@@ -96,6 +108,8 @@
 
         function workingCount() {
             return new WinJS.Promise(function (complete, error) {
+                //play work sound
+                workSound.play();
                 intervalID = setInterval(function () {
                     currentTabata.workleft -= 1;
 
@@ -108,6 +122,7 @@
         }
 
         function restingCount() {
+            //play rest sound
             return new WinJS.Promise(function (complete, error) {
                 intervalID = setInterval(function () {
                     currentTabata.restleft -= 1;
