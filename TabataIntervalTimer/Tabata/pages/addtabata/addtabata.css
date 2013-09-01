@@ -1,3 +1,16 @@
 ﻿.addtabata p {
-    margin-left: 120px;
+    margin-left: 20px;
+}
+
+.addtabata input[type=text], label {
+display:inline-block;
+}
+
+.addtabata label {
+    width:100px;
+   }
+
+.addtabata input[type=text] {
+width:50px;
+
 }

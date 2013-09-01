@@ -1,6 +1,29 @@
 ﻿.homepage section[role=main] {
-    margin-left: 120px;
+    margin-left: 20px;
+    display:inline-block;
+    
 }
+.homepage section[role=main] h1{
+font-size:36px;
+}
+
+
+#create-tabata-pageholder {
+display:inline-block;
+width:400px;
+margin-left:700px;
+}
+
+table  {
+ width:100%;
+
+}
+ th, td {
+ height:20px;
+ width:100px;
+ text-align:center
+ }
+
 
 @media screen and (-ms-view-state: snapped) {
     .homepage section[role=main] {
@@ -10,6 +33,6 @@
 
 @media screen and (-ms-view-state: portrait) {
     .homepage section[role=main] {
-        margin-left: 100px;
+        margin-left: 120px;
     }
 }
