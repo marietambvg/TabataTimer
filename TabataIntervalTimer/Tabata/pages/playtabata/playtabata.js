@@ -7,16 +7,34 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            // TODO: Initialize the page here.
-           WinJS.Binding.processAll(element,
-                ViewModels.tabatas.getAt(options.indexInTabataList));
-           var index = options.indexInTabataList;
-           var currentTabata = ViewModels.tabatas.getAt(options.indexInTabataList);
-            var getTabataTemplate = WinJS.Utilities.id("tabata-template-container").get(0);
-            var tabataTemplate = getTabataTemplate.winControl;
-            var contentHolder = WinJS.Utilities.id("tabata-play-content").get(0);
-            var startButton = WinJS.Utilities.id("start").get(0);
-            PlayTabataCodeBehind.startTimer(currentTabata, tabataTemplate, contentHolder, startButton);
+
+            WinJS.Binding.optimizeBindingReferences = true;
+            WinJS.Binding.processAll(element,
+                ViewModels.tabatas.getAt(options.indexInTabataList)).then(function () {
+
+                    var currentTabata = ViewModels.tabatas.getAt(options.indexInTabataList);
+                    var getTabataTemplate = WinJS.Utilities.id("tabata-template-container").get(0);
+                    var tabataTemplate = getTabataTemplate.winControl;
+                    var contentHolder = WinJS.Utilities.id("tabata-play-content").get(0);
+                    var startButton = WinJS.Utilities.id("start").get(0);
+
+                    var ObservableTabata = WinJS.Binding.define(currentTabata);
+
+                    var tabata = new ObservableTabata({
+                        name: currentTabata.name,
+                        intervals: currentTabata.intervals,
+                        rest: currentTabata.rest,
+                        restleft: currentTabata.rest,
+                        work: currentTabata.work,
+                        workleft: currentTabata.work,
+                        prepare: currentTabata.prepare
+                    });
+
+                    WinJS.Utilities.markSupportedForProcessing(ObservableTabata);
+                    tabataTemplate.render(tabata, contentHolder);
+
+                    PlayTabataCodeBehind.startTimer(tabata, startButton);
+                })
         },
 
         unload: function () {
