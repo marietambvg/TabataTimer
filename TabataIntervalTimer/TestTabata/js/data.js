@@ -25,7 +25,7 @@
 
     var getBasicTabata = function () {
         return new ObservableTabata({
-            intervals: 8,
+            intervals: 3,
             rest: 10,
             restleft: 10,
             work: 5,

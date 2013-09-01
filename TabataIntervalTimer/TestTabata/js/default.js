@@ -36,13 +36,14 @@
             function cycleIntervals() {
 
                 cycles++;
-                innerCycle();
-                //if (cycles < intervals) {
-                //    cycleIntervals();
-                //}
+                innerCycle().then(function () {
+                    if (cycles < intervals) {
+                        cycleIntervals();
+                    }
+                });
             };
 
-            
+
             //function clickButton() {
             //    setTimeout(function () {
             //        startButton.click()
@@ -51,21 +52,24 @@
 
 
             function innerCycle() {
-                return new WinJS.Promise(function () {
+                return new WinJS.Promise(function (complete, error) {
                     var counter = 0;
                     intervalID = setInterval(function () {
 
                         counter++;
                         basicTabata.workleft -= 1;
 
-                        if (counter >= workingTime) {
+                        if (counter > workingTime) {
                             clearInterval(intervalID);
                             basicTabata.workleft = workingTime;
+                            complete();
                         }
                         //end setInterval            
                     }, 1000);
                 });
             }
+
+
         })
     }
     app.start();
