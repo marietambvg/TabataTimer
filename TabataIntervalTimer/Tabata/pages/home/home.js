@@ -9,6 +9,8 @@
         },
 
         ready: function (element, options) {
+            var pageholder = document.getElementById("create-tabata-pageholder");
+            WinJS.UI.Pages.render("/pages/addtabata/addtabata.html", pageholder)
             // TODO: Initialize the page here.
         }
     });
