@@ -21,8 +21,18 @@
         WinJS.Navigation.navigate("/pages/home/home.html");
     }
 
+    //var onChangeInputs = function () {
+
+    //    document.getElementById("wo-work").addEventListener('change', changeValue, false);
+
+    //    function changeValue() {
+    //        document.getElementById("wo-work-value").value = document.getElementById("wo-work").value;
+    //    }
+    //}
+
     WinJS.Utilities.markSupportedForProcessing(submitTabata);
     WinJS.Namespace.define("AddTabataCodeBehind", {
-        submitTabata: submitTabata
+        submitTabata: submitTabata,
+        //onChangeInputs: onChangeInputs
     });
 })()
