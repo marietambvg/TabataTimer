@@ -1,4 +1,4 @@
-﻿/// <reference path="../playtabata/playtabatacodebehind.js" />
+﻿
 (function () {
     var submitTabata = function () {
         var tabataNameInput = document.getElementById("tabata-name-input");
@@ -16,13 +16,11 @@
         var tabataPrepareInput = document.getElementById("wo-prepare");
         var tabataPrepare = tabataPrepareInput.value;
 
-        
-
-        ViewModels.addTabata(tabataName, tabataIntervals, tabataRest, tabataWork,  tabataPrepare);
+        ViewModels.addTabata(tabataName, tabataIntervals, tabataRest, tabataWork, tabataPrepare);
+        HomeCodeBehind.callLoadTabatas();
     }
 
     WinJS.Utilities.markSupportedForProcessing(submitTabata);
-
     WinJS.Namespace.define("AddTabataCodeBehind", {
         submitTabata: submitTabata
     });

@@ -20,7 +20,6 @@
         },
 
         updateLayout: function (element, viewState, lastViewState) {
-
         }
     });
 })();
