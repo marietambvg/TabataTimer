@@ -2,11 +2,12 @@
 (function () {
 
     var tabatas = [
-            new Models.TabataModel("standard triple", 12, 10, 20, 10),
-            new Models.TabataModel("standard half", 4, 10, 20, 10),
-            new Models.TabataModel("ironman half", 4, 10, 50, 10),
-            new Models.TabataModel("ironman triple", 12, 10, 50, 10),
-            new Models.TabataModel("quick test", 2, 3, 3, 3),
+        new Models.TabataModel("standard tabata", 8, 10, 20, 10),
+        new Models.TabataModel("tabata triple", 12, 10, 20, 10),
+        new Models.TabataModel("tabata half", 4, 10, 20, 10),
+        new Models.TabataModel("ironman half", 4, 10, 50, 10),
+        new Models.TabataModel("ironman triple", 12, 10, 50, 10),
+
     ];
 
     var updateRoamingStore = function () {
@@ -15,20 +16,25 @@
 
 
     var getUpdatedTabatas = function () {
-        tabatas = [];
-        var roamingData = RoamingCodeBehind.getRoamingData();
-        var currentModel;
-        for (var i = 0; i < roamingData.size; i++) {
-            var name = roamingData["workout" + i].name;
-            var intervals = roamingData["workout" + i].intervals;
-            var rest = roamingData["workout" + i].rest;
-            var work = roamingData["workout" + i].work;
-            var prepare = roamingData["workout" + i].prepare;
-            currentModel = new Models.TabataModel(name, intervals, rest, work, prepare);
-            tabatas.push(currentModel);
-        }
 
-        return tabatas;
+
+        var roamingData = RoamingCodeBehind.getRoamingData();
+        if (roamingData) {
+            tabatas = [];
+            var currentModel;
+            for (var i = 0; i < roamingData.size; i++) {
+                var name = roamingData["workout" + i].name;
+                var intervals = roamingData["workout" + i].intervals;
+                var rest = roamingData["workout" + i].rest;
+                var work = roamingData["workout" + i].work;
+                var prepare = roamingData["workout" + i].prepare;
+                currentModel = new Models.TabataModel(name, intervals, rest, work, prepare);
+                tabatas.push(currentModel);
+            }
+            return tabatas;
+        }
+        else getTabatas;
+
     }
 
 
