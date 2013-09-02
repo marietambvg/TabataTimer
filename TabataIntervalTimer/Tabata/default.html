@@ -5,7 +5,7 @@
     <title>Tabata</title>
 
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
 
@@ -20,22 +20,25 @@
     <script src="js/defaultcodebehind.js"></script>
 </head>
 <body>
-    <header aria-label="Header content" role="banner">
-        <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
-        <h1 class="titlearea win-type-ellipsis">
-            <span class="pagetitle">Welcome to Interval Timer!</span>
-        </h1>
-    </header>
-    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/home/home.html'}"></div>
+    <div class="win-ui-light appGrid">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis pagetitle">Welcome to Workout Timer!</h1>
+        </header>
+        <div class="appViewContentMask">
+            <div class="appViewContent">
+                <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/home/home.html'}"></div>
+            </div>
+        </div>
+    </div>
 
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fav', label:'Favorites', icon:'favorite'}" type="button"></button>
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'add', label:'Add workout', icon:'add',onclick: DefaultCodeBehind.goToAddTabata}" type="button"></button>
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'save', label:'Save workout', icon:'save',onclick: DefaultCodeBehind.goToAddTabata}" type="button"></button>
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Command', icon:'placeholder'}" type="button"></button>
-
     </div>
-    <canvas id="canvas"></canvas>
 
+    <canvas id="canvas"></canvas>
 </body>
 </html>

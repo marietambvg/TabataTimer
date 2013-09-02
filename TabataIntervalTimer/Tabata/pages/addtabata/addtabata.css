@@ -1,16 +1,53 @@
-﻿.addtabata p {
-    margin-left: 20px;
+﻿.fragment header[role=banner] {
+    /* Define a grid with columns for the back button and page title. */
+    -ms-grid-columns: 120px 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
 }
 
-.addtabata input[type=text], label {
-display:inline-block;
+    .fragment header[role=banner] .win-backbutton {
+        margin-left: 39px;
+        margin-top: 59px;
+    }
+
+    .fragment header[role=banner] .titlearea {
+        -ms-grid-column: 2;
+        margin-top: 37px;
+        width: 90%;
+        text-align: center;
+    }
+
+.addtabata {
+    padding-left: 120px;
 }
 
-.addtabata label {
-    width:100px;
-   }
+    .addtabata .content {
+        margin-left: 200px;
+    }
 
-.addtabata input[type=text] {
-width:50px;
+    .addtabata input[type=text], label {
+        display: inline-block;
+    }
 
-}
+    .addtabata input[type=range]::-ms-fill-lower {
+        background-color: red;
+    }
+
+    .addtabata input[type=range]::-ms-track {
+        color: transparent;
+    }
+
+    .addtabata input[type=range]::-ms-ticks-before {
+        display: block;
+        color: rgb(150, 150, 150);
+        height: 8px;
+        padding-bottom: 5px;
+    }
+
+    .addtabata label {
+        width: 100px;
+    }
+
+    .addtabata input[type=text] {
+        width: 270px;
+    }
