@@ -16,7 +16,7 @@
         return  new Models.TabataModel("standard",8,10,20,10)
     }
 
-    var getCustomTabata = function (name,intervals,rest,work,prepare) {
+    var getTabata = function (name,intervals,rest,work,prepare) {
         return new Models.TabataModel(name, intervals, rest, work, prepare)
     }
 
@@ -29,6 +29,6 @@
         getTabatas: getTabatas,
         addTabata: addTabata,
         getBasicTabata: getBasicTabata,
-        getCustomTabata:getCustomTabata
+        getTabata:getTabata
     });
 })()

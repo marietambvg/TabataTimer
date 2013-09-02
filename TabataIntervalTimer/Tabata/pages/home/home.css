@@ -1,18 +1,12 @@
-﻿.homepage section[role=main] {
-    margin-left: 20px;
-    display:inline-block;
-    
-}
-.homepage section[role=main] h1{
+﻿
+/*.homepage section[role=main] h1{
 font-size:36px;
 }
 
-
-#create-tabata-pageholder {
-display:inline-block;
-width:400px;
-margin-left:700px;
+.playtabata-fragment section {
+    display:inline-block
 }
+
 
 table  {
  width:100%;
@@ -22,7 +16,7 @@ table  {
  height:20px;
  width:100px;
  text-align:center
- }
+ }*/
 
 
 @media screen and (-ms-view-state: snapped) {

@@ -18,6 +18,7 @@
 
         ViewModels.addTabata(tabataName, tabataIntervals, tabataRest, tabataWork, tabataPrepare);
         HomeCodeBehind.callLoadTabatas();
+        WinJS.Navigation.navigate("/pages/home/home.html");
     }
 
     WinJS.Utilities.markSupportedForProcessing(submitTabata);

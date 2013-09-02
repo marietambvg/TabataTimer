@@ -1,4 +1,5 @@
 ﻿(function () {
+    
 
     var startTimer = function (currentTabata, startButton) {
 
@@ -168,7 +169,8 @@
     WinJS.Namespace.define("PlayTabataCodeBehind", {
 
         startTimer: startTimer,
-        playTabata:playTabata
+        playTabata:playTabata,
+        
 
     })
 })();

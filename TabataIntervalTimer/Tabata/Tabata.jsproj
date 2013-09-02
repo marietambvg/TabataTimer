@@ -77,10 +77,7 @@
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
     <Content Include="pages\home\homecodebehind.js" />
-    <Content Include="pages\playtabata\playtabata.css" />
-    <Content Include="pages\playtabata\playtabata.html" />
-    <Content Include="pages\playtabata\playtabata.js" />
-    <Content Include="pages\playtabata\playtabatacodebehind.js" />
+    <Content Include="pages\home\playtabatacodebehind.js" />
     <Content Include="sounds\ring.mp3" />
     <Content Include="sounds\wakeup.mp3" />
     <None Include="Tabata_TemporaryKey.pfx" />

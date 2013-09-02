@@ -16,7 +16,14 @@
         loadTabatas: loadTabatas,
         tabatas: tabatasList,
         addTabata: function (name, intervals, rest, work, prepare) {
-            Data.addTabata(new Models.TabataModel(name, intervals, rest, work, prepare));
-        }
+            Data.addTabata(new Models.TabataModel(name, intervals, rest, work, prepare))
+
+        },
+        getTabata: function (name, intervals, rest, work, prepare) {
+            return Data.getTabata(new Models.TabataModel(name, intervals, rest, work, prepare));
+        },
+        getBasicTabata: function () {
+        return Data.getBasicTabata();
+    }
     });
 })();

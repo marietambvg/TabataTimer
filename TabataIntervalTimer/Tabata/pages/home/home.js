@@ -9,9 +9,21 @@
         },
 
         ready: function (element, options) {
-            var pageholder = document.getElementById("create-tabata-pageholder");
-            WinJS.UI.Pages.render("/pages/addtabata/addtabata.html", pageholder)
-            // TODO: Initialize the page here.
-        }
+           
+           var currentTabata;
+           WinJS.Binding.optimizeBindingReferences = true;
+           if (options) {
+               WinJS.Binding.processAll(element,
+                   ViewModels.tabatas.getAt(options.indexInTabataList)).then(function () {
+                       currentTabata = ViewModels.tabatas.getAt(options.indexInTabataList);
+                   })
+           }
+           else {
+               currentTabata = ViewModels.getBasicTabata();
+           }
+           PlayTabataCodeBehind.playTabata(currentTabata);
+        },
+
+            
     });
 })();
