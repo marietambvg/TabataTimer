@@ -16,7 +16,6 @@
 
         updateLayout: function (element, viewState, lastViewState) {
             /// <param name="element" domElement="true" />
-
             // TODO: Respond to changes in viewState.
         }
     });

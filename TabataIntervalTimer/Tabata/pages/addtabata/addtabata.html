@@ -11,7 +11,7 @@
 
     <link href="addtabata.css" rel="stylesheet" />
     <script src="addtabatacodebehind.js"></script>
-    <script src="addtabata.js"></script>    
+    <script src="addtabata.js"></script>
     <script src="../playtabata/playtabatacodebehind.js"></script>
 
 </head>
@@ -30,19 +30,23 @@
             </div>
             <div>
                 <label for="wo-intervals">Intervals: </label>
-                <input type="text" id="wo-intervals" />
+                <input type="range" id="wo-intervals"
+                    min="1" max="20" value="8" />
             </div>
             <div>
-                <label for="wo-work">Work time:</label>
-                <input type="text" id="wo-work" />
+                <span id="wo-work-value">Work time: </span>
+                <input type="range" id="wo-work"
+                    min="10" max="190" value="20" step="2" />
             </div>
             <div>
                 <label for="wo-rest">Rest time: </label>
-                <input type="text" id="wo-rest" />
+                <input type="range" id="wo-rest"
+                    min="2" max="60" value="10" step="2" />
             </div>
             <div>
                 <label for="wo-prepare">Prepare time:</label>
-                <input type="text" id="wo-prepare" />
+                <input type="range" id="wo-prepare"
+                    min="2" max="20" value="10" step="2" />
             </div>
 
             <button onclick="AddTabataCodeBehind.submitTabata(event)">Create you workout</button>
