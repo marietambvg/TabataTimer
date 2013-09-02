@@ -1,23 +1,24 @@
 ﻿/// <reference path="../roamingdata.js" />
 (function () {
-
+    var maxKeepedTabatas = 8;
     var tabatas = [
         new Models.TabataModel("standard tabata", 8, 10, 20, 10),
         new Models.TabataModel("tabata triple", 12, 10, 20, 10),
         new Models.TabataModel("tabata half", 4, 10, 20, 10),
         new Models.TabataModel("ironman half", 4, 10, 50, 10),
         new Models.TabataModel("ironman triple", 12, 10, 50, 10),
-
     ];
 
     var updateRoamingStore = function () {
+        RoamingCodeBehind.deleteContainer();
         RoamingCodeBehind.storeData(tabatas);
     }
 
+    var getTabatas = function () {
+        return tabatas;
+    }
 
     var getUpdatedTabatas = function () {
-
-
         var roamingData = RoamingCodeBehind.getRoamingData();
         if (roamingData) {
             tabatas = [];
@@ -31,14 +32,10 @@
                 currentModel = new Models.TabataModel(name, intervals, rest, work, prepare);
                 tabatas.push(currentModel);
             }
-            return tabatas;
         }
-        else getTabatas;
-
-    }
-
-
-    var getTabatas = function () {
+        else {
+            tabatas = getTabatas();
+        }
         return tabatas;
     }
 
@@ -53,9 +50,17 @@
     }
 
     var addTabata = function (tabataModel) {
-        // if(tabata
-        tabatas.push(tabataModel);
-        updateRoamingStore();
+        if (tabatas.length >= maxKeepedTabatas) {
+
+            tabatas.splice((tabatas.length - 1), 1);
+        }
+        tabatas.splice(1, 0, tabataModel);
+        updateRoamingStore(tabatas);
+    }
+
+    var deleteTabata = function (index) {
+        tabatas.splice(index, 1);
+        updateRoamingStore(tabatas);
     }
 
     WinJS.Namespace.define("Data", {
@@ -63,6 +68,7 @@
         getUpdatedTabatas: getUpdatedTabatas,
         addTabata: addTabata,
         getBasicTabata: getBasicTabata,
-        getTabata: getTabata
+        getTabata: getTabata,
+        deleteTabata: deleteTabata
     });
 })()

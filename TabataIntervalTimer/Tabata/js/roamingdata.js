@@ -30,6 +30,10 @@
         roamingSettings.values.remove(settingName);
     }
 
+    var deleteContainer = function () {
+        roamingSettings.deleteContainer("workoutsContainer");
+    };
+
     // store the data
     var storeData = function (data) {
 
@@ -45,7 +49,7 @@
                 woDetails["rest"] = data[i].rest;
                 woDetails["work"] = data[i].work;
                 woDetails["prepare"] = data[i].prepare;
-                roamingSettings.containers.lookup("workoutsContainer").values["workout"+i] = woDetails;
+                roamingSettings.containers.lookup("workoutsContainer").values["workout" + i] = woDetails;
             }
         }
     }
@@ -53,16 +57,18 @@
     var getRoamingData = function () {
         var hasContainer = roamingSettings.containers.hasKey("workoutsContainer");
         if (hasContainer) {
-            var roamingData=roamingSettings.containers.lookup("workoutsContainer").values;
+            var roamingData = roamingSettings.containers.lookup("workoutsContainer").values;
             return roamingData;
         }
     }
     WinJS.Utilities.markSupportedForProcessing(storeData);
     WinJS.Utilities.markSupportedForProcessing(getRoamingData);
+    WinJS.Utilities.markSupportedForProcessing(deleteContainer);
 
     WinJS.Namespace.define("RoamingCodeBehind", {
         storeData: storeData,
-        getRoamingData:getRoamingData
+        getRoamingData: getRoamingData,
+        deleteContainer: deleteContainer
     });
 
 })();
