@@ -1,53 +1,45 @@
-﻿.fragment header[role=banner] {
-    /* Define a grid with columns for the back button and page title. */
-    -ms-grid-columns: 120px 1fr;
-    -ms-grid-rows: 1fr;
-    display: -ms-grid;
+﻿.addtabata section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
 }
 
-    .fragment header[role=banner] .win-backbutton {
-        margin-left: 39px;
-        margin-top: 59px;
-    }
-
-    .fragment header[role=banner] .titlearea {
-        -ms-grid-column: 2;
-        margin-top: 37px;
-        width: 90%;
-        text-align: center;
-    }
-
-.addtabata {
-    padding-left: 120px;
+.addtabata input[type=text], label {
+    display: inline-block;
 }
 
-    .addtabata .content {
-        margin-left: 200px;
-    }
+.addtabata input[type=range]::-ms-fill-lower {
+    background-color: red;
+}
 
-    .addtabata input[type=text], label {
-        display: inline-block;
-    }
+.addtabata input[type=range]::-ms-track {
+    color: transparent;
+}
 
-    .addtabata input[type=range]::-ms-fill-lower {
-        background-color: red;
-    }
+.addtabata input[type=range]::-ms-ticks-before {
+    display: block;
+    color: rgb(150, 150, 150);
+    height: 8px;
+    padding-bottom: 5px;
+}
 
-    .addtabata input[type=range]::-ms-track {
-        color: transparent;
-    }
+.addtabata label {
+    width: 100px;
+}
 
-    .addtabata input[type=range]::-ms-ticks-before {
-        display: block;
-        color: rgb(150, 150, 150);
-        height: 8px;
-        padding-bottom: 5px;
-    }
+.addtabata input[type=text] {
+    width: 270px;
+}
 
-    .addtabata label {
-        width: 100px;
+@media screen and (-ms-view-state: snapped) {
+    .addcomputer section[role=main] {
+        margin-left: 20px;
+        margin-right: 20px;
     }
+}
 
-    .addtabata input[type=text] {
-        width: 270px;
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .addcomputer section[role=main] {
+        margin-left: 100px;
+        margin-right: 100px;
     }
+}

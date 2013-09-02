@@ -1,32 +1,27 @@
-﻿
-/*.homepage section[role=main] h1{
-font-size:36px;
+﻿.homepage section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+    border: 2px solid groove;
 }
 
-.playtabata-fragment section {
-    display:inline-block
+#home-page-full-holder {
+    overflow-x: scroll;
 }
 
-
-table  {
- width:100%;
-
+.basic-tabata-template {
+    height: 200px;
 }
- th, td {
- height:20px;
- width:100px;
- text-align:center
- }*/
-
 
 @media screen and (-ms-view-state: snapped) {
     .homepage section[role=main] {
         margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
-@media screen and (-ms-view-state: portrait) {
+@media screen and (-ms-view-state: fullscreen-portrait) {
     .homepage section[role=main] {
-        margin-left: 120px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
 }

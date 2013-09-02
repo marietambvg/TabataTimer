@@ -21,17 +21,7 @@
     <script src="js/defaultcodebehind.js"></script>
 </head>
 <body>
-    <div class="win-ui-light appGrid">
-        <header aria-label="Header content" role="banner">
-            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
-            <h1 class="titlearea win-type-ellipsis pagetitle">Welcome to Workout Timer!</h1>
-        </header>
-        <div class="appViewContentMask">
-            <div class="appViewContent">
-                <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/home/home.html'}"></div>
-            </div>
-        </div>
-    </div>
+    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/home/home.html'}"></div>
 
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fav', label:'Favorites', icon:'favorite'}" type="button"></button>
