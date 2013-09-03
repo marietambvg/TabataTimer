@@ -1,14 +1,19 @@
-﻿(function () {
+﻿/// <reference path="../../js/musicsetter.js" />
+(function () {
 
 
     var startTimer = function (currentTabata, startButton) {
 
+        var player = document.getElementById("player");
         var tabatasCounterElement = document.getElementById("tabatas-count");
         var tabatasCounter = 1;
         tabatasCounterElement.innerHTML = tabatasCounter;
 
         var intervalID = 0;
         startButton.addEventListener("click", function () {
+            
+            player.src = MusicSetter.backgroundMusic();
+            player.play();
             tabatasCycle().then(function () {
                 tabatasCounter = 1;
                 tabatasCounterElement.innerHTML = tabatasCounter;
@@ -17,9 +22,12 @@
 
         var canvas;
         var ctx;
-        var restSound = new Audio("/sounds/ring.mp3");
+          
+        var restUrl = MusicSetter.restUrl;
+        var workUrl = MusicSetter.workUrl;
+        var restSound = new Audio(restUrl);
         restSound.loop = false;
-        var workSound = new Audio("/sounds/wakeup.mp3");
+        var workSound = new Audio(workUrl);
         workSound.loop = false;
         canvas = document.getElementById("canvas");
         ctx = canvas.getContext("2d");
