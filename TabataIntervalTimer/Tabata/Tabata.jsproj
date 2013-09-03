@@ -80,7 +80,6 @@
     <Content Include="pages\home\homecodebehind.js" />
     <Content Include="pages\home\playtabatacodebehind.js" />
     <Content Include="sounds\ring.mp3" />
-    <Content Include="sounds\wakeup.mp3" />
     <None Include="Tabata_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
