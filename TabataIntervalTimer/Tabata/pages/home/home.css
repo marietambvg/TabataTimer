@@ -1,15 +1,52 @@
 ﻿.homepage section[role=main] {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     margin-left: 120px;
     margin-right: 120px;
-    border: 2px solid groove;
-}
-
-#home-page-full-holder {
-    overflow-x: scroll;
 }
 
 .basic-tabata-template {
-    height: 200px;
+    height: 250px;
+}
+
+.win-listview {
+    width: 100%;
+    height: 280px;
+    padding: 0 115px 5px;
+    border-top: solid 2px rgba(0, 0, 0, 0.13);
+    background-color: gray;
+}
+
+.win-container {
+    overflow: hidden;
+    border: solid 2px rgba(0, 0, 0, 0.13);
+}
+
+.win-item {
+    padding: 5px 5px 10px;
+    width: 200px;
+    height: 210px;
+    background-color: lightcoral;
+}
+
+.description-holder {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.description-value {
+    color: white;
+    margin: -6px 0 0;
+    padding: 0;
+    text-align: center;
+    font: normal 20pt Segoe UI Light;
+}
+
+.description-name {
+    margin: -6px 0 4px;
+    font: normal 9pt Segoe UI;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (-ms-view-state: snapped) {
