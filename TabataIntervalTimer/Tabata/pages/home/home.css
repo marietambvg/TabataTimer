@@ -13,8 +13,21 @@
     text-align: center;
 }
 
-.basic-tabata-template {
+.info-wrap {
+    position: absolute;
+    z-index: 1;
+    left: -50px;
+    top: -200px;
+    margin: 250px 100px 0;
 }
+
+/*.basic-tabata-template .description-value {
+    font: normal 42pt Segoe UI Light;
+}
+
+.basic-tabata-template .description-name {
+    font: normal 20pt Segoe UI;
+}*/
 
 #prepare-wrap {
     background-color: orange;
@@ -43,19 +56,15 @@
         font: normal 72pt Segoe UI Light;
         display: inline-block;
         float: left;
-        margin: 70px 100px 0;
+        margin: 100px 20px 0 320px;
     }
 
     .counter-wrap div {
         font: normal 250pt Segoe UI Light;
         display: inline-block;
         float: right;
-        margin: -60px 100px 0;
+        margin: -60px 100px 0 50px;
     }
-
-.info-wrap {
-    margin: 250px 100px 0;
-}
 
 #start {
     position: absolute;
@@ -88,6 +97,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    list-style: none;
 }
 
 .description-value {

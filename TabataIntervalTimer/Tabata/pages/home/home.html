@@ -30,36 +30,43 @@
             <!-- The above is just a container, classes and styles from it are not applied to the inner elements. 
             The actual template is the innerHTML -->
             <div class="basic-tabata-template">
-                <div id="prepare-wrap" class="counter-wrap">
-                    <h3>prepare</h3>
-                    <div data-win-bind="innerText: prepare"></div>
-                </div>
-                <div id="Div1" class="counter-wrap">
-                    <h3>prepare</h3>
-                    <div data-win-bind="innerText: prepare"></div>
-                </div>
-                <div id="work-wrap" class="counter-wrap">
-                    <h3>work</h3>
-                    <div data-win-bind="innerText: workleft"></div>
-                </div>
-                <div id="rest-wrap" class="counter-wrap">
-                    <h3>rest</h3>
-                    <div data-win-bind="innerText: restleft"></div>
-                </div>
                 <div class="info-wrap">
-                    <h3>cycles</h3>
-                    <div data-win-bind="innerText: intervals"></div>
+                    <ul class="description-holder">
+                        <li class="description-value" data-win-bind="innerText: name"></li>
+                        <li class="description-name">workout</li>
+                        <li class="description-value" data-win-bind="innerText: intervals"></li>
+                        <li class="description-name">cycles</li>
+                        <li class="description-value" data-win-bind="innerText: work"></li>
+                        <li class="description-name">work seconds</li>
+                        <li class="description-value" data-win-bind="innerText: rest"></li>
+                        <li class="description-name">rest seconds</li>
+                        <li class="description-value" data-win-bind="innerText: prepare"></li>
+                        <li class="description-name">prepare seconds</li>
+                        <li class="description-value" id="tabatas-count"></li>
+                        <li class="description-name">workout repeats</li>
+                    </ul>
                 </div>
-                <div class="info-wrap">
-                    <h3>workouts</h3>
-                    <div id="tabatas-count"></div>
+
+                <div>
+                    <div id="prepare-wrap" class="counter-wrap">
+                        <h3>prepare</h3>
+                        <div data-win-bind="innerText: prepare"></div>
+                    </div>
+                    <div id="work-wrap" class="counter-wrap">
+                        <h3>work</h3>
+                        <div data-win-bind="innerText: workleft"></div>
+                    </div>
+                    <div id="rest-wrap" class="counter-wrap">
+                        <h3>rest</h3>
+                        <div data-win-bind="innerText: restleft"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <section aria-label="Main content" role="main">
             <div id="tabata-play-content"></div>
 
-            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'start', label:'play countdown', icon:'play'}" type="button"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'start', label:'play', icon:'play'}" type="button"></button>
         </section>
 
         <div id="tabatas-details-template-container" data-win-control="WinJS.Binding.Template">

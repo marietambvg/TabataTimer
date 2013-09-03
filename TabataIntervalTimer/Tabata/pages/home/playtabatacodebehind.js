@@ -8,15 +8,19 @@
         var tabatasCounterElement = document.getElementById("tabatas-count");
         var tabatasCounter = 1;
         tabatasCounterElement.innerHTML = tabatasCounter;
+        var startButtonElement = document.getElementById("start");
 
         var intervalID = 0;
         startButton.addEventListener("click", function () {
             
             player.src = MusicSetter.backgroundMusic();
             player.play();
+
+            startButtonElement.style.visibility = "hidden";
             tabatasCycle().then(function () {
                 tabatasCounter = 1;
                 tabatasCounterElement.innerHTML = tabatasCounter;
+                startButtonElement.style.visibility = "visible";
             });
         });
 
