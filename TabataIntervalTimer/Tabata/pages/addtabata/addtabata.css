@@ -1,45 +1,115 @@
 ﻿.addtabata section[role=main] {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     margin-left: 120px;
+    margin-right: 120px;
+    text-align: center;
+    width: 85%;
+    background-color: orange;
+    height: 360px;
+    padding: 20px;
+    position: relative;
+}
+
+.addtabata .input-wrap {
+    text-align: right;
     margin-right: 120px;
 }
 
 .addtabata input[type=text], label {
     display: inline-block;
+    font: normal 20pt Segoe UI Light;
 }
 
-.addtabata input[type=range]::-ms-fill-lower {
-    background-color: red;
+.addtabata input[type=range] {
+    width: 350px;
 }
 
-.addtabata input[type=range]::-ms-track {
-    color: transparent;
-}
+    .addtabata input[type=range]::-ms-fill-lower {
+        background-color: red;
+    }
 
-.addtabata input[type=range]::-ms-ticks-before {
-    display: block;
-    color: rgb(150, 150, 150);
-    height: 8px;
-    padding-bottom: 5px;
-}
+    .addtabata input[type=range]::-ms-track {
+        color: transparent;
+    }
+
+    .addtabata input[type=range]::-ms-ticks-before {
+        display: block;
+        color: rgb(150, 150, 150);
+        height: 8px;
+        padding-bottom: 5px;
+    }
 
 .addtabata label {
-    width: 100px;
+    margin-right: 20px;
+    width: 200px;
+    text-align: left;
 }
 
 .addtabata input[type=text] {
-    width: 270px;
+    width: 350px;
+}
+
+.addtabata #savebtn {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    color: white;
+    font: normal 9pt Segoe UI;
 }
 
 @media screen and (-ms-view-state: snapped) {
-    .addcomputer section[role=main] {
+    .addtabata section[role=main] {
         margin-left: 20px;
         margin-right: 20px;
+        padding-bottom: 50px;
+        height: 97%;
+        width: 78%;
+        text-align: center;
+    }
+
+    .addtabata .input-wrap {
+        text-align: right;
+        margin-right: 0;
+    }
+
+    .addtabata label {
+        margin-right: 0;
+    }
+
+    .addtabata input[type=text] {
+        width: 80%;
+    }
+
+    .addtabata input[type=range] {
+        width: 80%;
     }
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
-    .addcomputer section[role=main] {
-        margin-left: 100px;
-        margin-right: 100px;
+    .addtabata section[role=main] {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 50px;
+        height: 97%;
+        width: 78%;
+        text-align: center;
+    }
+
+    .addtabata .input-wrap {
+        text-align: right;
+        margin-right: 0;
+    }
+
+    .addtabata label {
+        margin-right: 0;
+    }
+
+    .addtabata input[type=text] {
+        width: 80%;
+    }
+
+    .addtabata input[type=range] {
+        width: 80%;
     }
 }

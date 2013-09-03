@@ -20,36 +20,40 @@
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">Create custom workout</span>
+                <span class="pagetitle">Create new workout</span>
             </h1>
         </header>
         <section class="content" aria-label="Main content" role="main">
-            <div>
+            <div class="input-wrap">
                 <label for="tabata-name-input">name</label>
-                <input type="text" id="tabata-name-input" maxlength="15" />
+                <input type="text" id="tabata-name-input" maxlength="15" value="workout name" />
             </div>
-            <div>
-                <label for="wo-intervals">intervals</label>
+            <div class="input-wrap">
+                <label for="wo-intervals">cycles</label>
                 <input type="range" id="wo-intervals"
                     min="1" max="20" value="8" />
             </div>
-            <div>
-                <label for="wo-work">work time</label>
+            <div class="input-wrap">
+                <label for="wo-work">work seconds</label>
                 <input type="range" id="wo-work"
                     min="10" max="190" value="20" step="2" />
             </div>
-            <div>
-                <label for="wo-rest">rest time</label>
+            <div class="input-wrap">
+                <label for="wo-rest">rest seconds</label>
                 <input type="range" id="wo-rest"
                     min="2" max="60" value="10" step="2" />
             </div>
-            <div>
-                <label for="wo-prepare">prepare time</label>
+            <div class="input-wrap">
+                <label for="wo-prepare">prepare seconds</label>
                 <input type="range" id="wo-prepare"
                     min="2" max="20" value="10" step="2" />
             </div>
 
-            <button onclick="AddTabataCodeBehind.submitTabata(event)">Create you workout</button>
+            <button 
+                data-win-control="WinJS.UI.AppBarCommand" 
+                data-win-options="{id:'savebtn', label:'save', icon:'save'}" 
+                onclick="AddTabataCodeBehind.submitTabata(event)">
+            </button>
         </section>
     </div>
 </body>
