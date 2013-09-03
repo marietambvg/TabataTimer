@@ -10,7 +10,7 @@
 
 #tabata-play-content {
     height: 300px;
-    border: 2px solid red;
+    border: 2px solid rgba(0, 0, 0, 0.13);
     position: relative;
     text-align: center;
 }
@@ -20,14 +20,15 @@
 
 #prepare-wrap {
     background-color: orange;
+    visibility: visible;
 }
 
 #work-wrap {
-    background-color: green;
+    background-color: red;
 }
 
 #rest-wrap {
-    background-color: red;
+    background-color: green;
 }
 
 .counter-wrap {
@@ -37,6 +38,7 @@
     height: 300px;
     width: 100%;
     color: white;
+    visibility: hidden;
 }
 
     .counter-wrap h3 {

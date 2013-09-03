@@ -1,5 +1,5 @@
 ﻿(function () {
-    
+
 
     var startTimer = function (currentTabata, startButton) {
 
@@ -21,8 +21,13 @@
         restSound.loop = false;
         var workSound = new Audio("/sounds/wakeup.mp3");
         workSound.loop = false;
-            canvas = document.getElementById("canvas");
-            ctx = canvas.getContext("2d");
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+
+        //counter state visibility settings
+        var prepareWrap = document.getElementById("prepare-wrap");
+        var workWrap = document.getElementById("work-wrap");
+        var restWrap = document.getElementById("rest-wrap");
 
         function tabatasCycle() {
             var complete, error;
@@ -35,6 +40,9 @@
 
             function recursiveCall() {
                 intervalsCycle().then(function () {
+                    //change counter state visibility
+                    prepareWrap.style.visibility = "visible";
+
                     currentTabata.prepare = prepareTime;
                     currentTabata.intervals = intervals;
                     tabatasCounter -= 1;
@@ -60,10 +68,14 @@
             });
 
             prepareCount().then(function () {
+                //change counter state visibility
+                prepareWrap.style.visibility = "hidden";
+
                 recursiveCycle();
             });
 
             function recursiveCycle() {
+
                 workRestCycle().then(function () {
                     currentTabata.intervals -= 1;
                     if (currentTabata.intervals <= 0) {
@@ -80,13 +92,23 @@
 
         function workRestCycle() {
             return new WinJS.Promise(function (complete, error) {
+                //change counter state visibility
+                workWrap.style.visibility = "visible";
 
                 workingCount().then(function () {
+                    //change counter state visibility
+                    workWrap.style.visibility = "hidden";
+
                     currentTabata.workleft = currentTabata.work;
                     //play rest sound
                     restSound.play();
-                   
+                    //change counter state visibility
+                    restWrap.style.visibility = "visible";
+
                     restingCount().then(function () {
+                        //change counter state visibility
+                        restWrap.style.visibility = "hidden";
+
                         currentTabata.restleft = currentTabata.rest;
                         complete();
                     });
@@ -159,7 +181,7 @@
         WinJS.Utilities.markSupportedForProcessing(ObservableTabata);
         tabataTemplate.render(tabata, contentHolder);
 
-         startTimer(tabata, startButton);
+        startTimer(tabata, startButton);
 
     }
 
@@ -169,8 +191,8 @@
     WinJS.Namespace.define("PlayTabataCodeBehind", {
 
         startTimer: startTimer,
-        playTabata:playTabata,
-        
+        playTabata: playTabata,
+
 
     })
 })();
