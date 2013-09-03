@@ -8,12 +8,12 @@
         // populates the page elements with the app's data.
         processed: function (element, options) {
             
-            if (app.sessionState.person) {
-                document.getElementById("tabata-name-input").value = app.sessionState.person.name;
-                document.getElementById("wo-intervals").value = app.sessionState.person.intervals;
-                document.getElementById("wo-rest").value = app.sessionState.person.rest;
-                document.getElementById("wo-work").value = app.sessionState.person.work;
-                document.getElementById("wo-prepare").value = app.sessionState.person.prepare;
+            if (app.sessionState.tabata) {
+                document.getElementById("tabata-name-input").value = app.sessionState.tabata.name;
+                document.getElementById("wo-intervals").value = app.sessionState.tabata.intervals;
+                document.getElementById("wo-rest").value = app.sessionState.tabata.rest;
+                document.getElementById("wo-work").value = app.sessionState.tabata.work;
+                document.getElementById("wo-prepare").value = app.sessionState.tabata.prepare;
             }
         },
 
