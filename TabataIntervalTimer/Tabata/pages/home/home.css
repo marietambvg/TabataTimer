@@ -5,13 +5,11 @@
     margin-right: 120px;
     text-align: right;
     width: 85%;
+    position: relative;
 }
 
-
 #tabata-play-content {
-    height: 300px;
-    border: 2px solid rgba(0, 0, 0, 0.13);
-    position: relative;
+    height: 360px;
     text-align: center;
 }
 
@@ -35,7 +33,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 300px;
+    height: 360px;
     width: 100%;
     color: white;
     visibility: hidden;
@@ -49,10 +47,10 @@
     }
 
     .counter-wrap div {
-        font: normal 200pt Segoe UI Light;
+        font: normal 250pt Segoe UI Light;
         display: inline-block;
         float: right;
-        margin: -40px 100px 50px;
+        margin: -60px 100px 0;
     }
 
 .info-wrap {
@@ -60,7 +58,10 @@
 }
 
 #start {
-    margin-top: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    color: white;
 }
 
 .win-listview {
@@ -78,7 +79,7 @@
 
 .win-item {
     padding: 5px 5px 10px;
-    width: 200px;
+    width: 213px;
     height: 210px;
     background-color: lightcoral;
 }

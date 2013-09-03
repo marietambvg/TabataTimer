@@ -23,7 +23,7 @@
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">Play Workout Timer</span>
+                <span class="pagetitle">Workout Timer</span>
             </h1>
         </header>
         <div id="tabata-template-container" data-win-control="WinJS.Binding.Template">
@@ -31,6 +31,10 @@
             The actual template is the innerHTML -->
             <div class="basic-tabata-template">
                 <div id="prepare-wrap" class="counter-wrap">
+                    <h3>prepare</h3>
+                    <div data-win-bind="innerText: prepare"></div>
+                </div>
+                <div id="Div1" class="counter-wrap">
                     <h3>prepare</h3>
                     <div data-win-bind="innerText: prepare"></div>
                 </div>
@@ -55,7 +59,7 @@
         <section aria-label="Main content" role="main">
             <div id="tabata-play-content"></div>
 
-            <button id="start">start workout</button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'start', label:'play countdown', icon:'play'}" type="button"></button>
         </section>
 
         <div id="tabatas-details-template-container" data-win-control="WinJS.Binding.Template">
@@ -74,7 +78,6 @@
                     <li class="description-value" data-win-bind="innerText: prepare"></li>
                     <li class="description-name">prepare seconds</li>
                 </ul>
-
             </div>
         </div>
 
