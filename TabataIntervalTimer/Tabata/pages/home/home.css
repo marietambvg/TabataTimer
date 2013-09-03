@@ -30,16 +30,16 @@
 }*/
 
 #prepare-wrap {
-    background-color: orange;
+    background-color: #ee7202;
     visibility: visible;
 }
 
 #work-wrap {
-    background-color: red;
+    background-color: #bd1313
 }
 
 #rest-wrap {
-    background-color: green;
+    background-color: #96ca1d;
 }
 
 .counter-wrap {
@@ -99,7 +99,7 @@
     padding: 5px 5px 10px;
     width: 213px;
     height: 210px;
-    background-color: lightcoral;
+    background-color: #a91049;
 }
 
 .description-holder {
@@ -120,7 +120,7 @@
 .description-name {
     margin: -6px 0 4px;
     font: normal 9pt Segoe UI;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 1);
 }
 
 @media screen and (-ms-view-state: snapped) {
