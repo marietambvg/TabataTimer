@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Tabata" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Tabata" ForegroundText="light" BackgroundColor="#B0171F">
+      <VisualElements DisplayName="Tabata" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Tabata" ForegroundText="light" BackgroundColor="#a91049">
         <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+        <SplashScreen Image="images\splash-screen.png" />
       </VisualElements>
     </Application>
   </Applications>
