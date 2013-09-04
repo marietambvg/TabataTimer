@@ -1,7 +1,16 @@
 ﻿/// <reference path="../../js/musicsetter.js" />
 (function () {
+    var state;
+    var tabatasCounter = 1;
+    //var 
 
-
+    var stopWorkout=function(){
+    
+        state = "stop";
+        tabatasCounter = 0;
+         return state;
+    
+    }
     var startTimer = function (currentTabata, startButton) {
 
         var player = document.getElementById("player");
@@ -11,8 +20,13 @@
         var startButtonElement = document.getElementById("start");
 
         var intervalID = 0;
+
+        state = "onhold";
+
         startButton.addEventListener("click", function () {
-            
+            if (state == "onhold") {
+                state = "play";
+            }
             player.src = MusicSetter.backgroundMusic();
             player.play();
 
@@ -23,6 +37,9 @@
                 startButtonElement.style.visibility = "visible";
             });
         });
+
+
+        //}, false)
 
         var canvas;
         var ctx;
@@ -40,6 +57,7 @@
         var prepareWrap = document.getElementById("prepare-wrap");
         var workWrap = document.getElementById("work-wrap");
         var restWrap = document.getElementById("rest-wrap");
+
 
         function tabatasCycle() {
             var complete, error;
@@ -59,8 +77,8 @@
                     currentTabata.intervals = intervals;
                     tabatasCounter -= 1;
                     tabatasCounterElement.innerHTML = tabatasCounter;
-                    if (tabatasCounter <= 0) {
-                        complete();
+                    if ((tabatasCounter <= 0)||(state=="stop")) {
+                       complete();
                     }
                     else {
                         recursiveCall();
@@ -82,7 +100,6 @@
             prepareCount().then(function () {
                 //change counter state visibility
                 prepareWrap.style.visibility = "hidden";
-
                 recursiveCycle();
             });
 
@@ -90,7 +107,7 @@
 
                 workRestCycle().then(function () {
                     currentTabata.intervals -= 1;
-                    if (currentTabata.intervals <= 0) {
+                    if ((currentTabata.intervals <= 0)||(state=="stop")) {
                         complete();
                     }
                     else {
@@ -113,7 +130,7 @@
 
                     currentTabata.workleft = currentTabata.work;
                     //play rest sound
-                    restSound.play();
+                   // restSound.play();
                     //change counter state visibility
                     restWrap.style.visibility = "visible";
 
@@ -133,7 +150,7 @@
                 intervalID = setInterval(function () {
                     currentTabata.prepare -= 1;
 
-                    if (currentTabata.prepare <= 0) {
+                    if ((currentTabata.prepare <= 0)||(state!="play")) {
                         clearInterval(intervalID);
                         complete();
                     }
@@ -144,11 +161,13 @@
         function workingCount() {
             return new WinJS.Promise(function (complete, error) {
                 //play work sound
-                workSound.play();
+                if (state == "play") {
+                    workSound.play();
+                }
                 intervalID = setInterval(function () {
                     currentTabata.workleft -= 1;
 
-                    if (currentTabata.workleft <= 0) {
+                    if ((currentTabata.workleft <= 0)||(state!="play")) {
                         clearInterval(intervalID);
                         complete();
                     }
@@ -158,11 +177,14 @@
 
         function restingCount() {
             //play rest sound
+            if (state == "play") {
+                restSound.play();
+            }
             return new WinJS.Promise(function (complete, error) {
                 intervalID = setInterval(function () {
                     currentTabata.restleft -= 1;
 
-                    if (currentTabata.restleft <= 0) {
+                    if ((currentTabata.restleft <= 0)|(state!="play")) {
                         clearInterval(intervalID);
                         complete();
                     }
@@ -204,7 +226,7 @@
 
         startTimer: startTimer,
         playTabata: playTabata,
-
+        stopWorkout:stopWorkout
 
     })
 })();

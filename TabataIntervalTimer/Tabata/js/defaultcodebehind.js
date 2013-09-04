@@ -1,6 +1,8 @@
-﻿(function () {
+﻿/// <reference path="../pages/home/playtabatacodebehind.js" />
+(function () {
 
     var goToAddTabata = function () {
+        PlayTabataCodeBehind.stopWorkout();
         WinJS.Navigation.navigate("/pages/addtabata/addtabata.html");
     }
 

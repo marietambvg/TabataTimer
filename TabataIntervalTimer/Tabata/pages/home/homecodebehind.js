@@ -1,6 +1,8 @@
-﻿(function () {
+﻿/// <reference path="playtabatacodebehind.js" />
+(function () {
     
     var goToHomePage = function (invokeEvent) {
+
         WinJS.Navigation.navigate("/pages/home/home.html", {
             indexInTabataList: invokeEvent.detail.itemIndex
         });

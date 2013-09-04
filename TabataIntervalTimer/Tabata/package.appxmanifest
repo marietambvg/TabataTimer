@@ -1,48 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity
-    Name="4925cae2-c76d-4af8-9c05-b646e3f1099c"
-    Version="1.0.0.0"
-    Publisher="CN=user" />
-
+  <Identity Name="4925cae2-c76d-4af8-9c05-b646e3f1099c" Version="1.0.0.0" Publisher="CN=user" />
   <Properties>
     <DisplayName>Tabata</DisplayName>
     <PublisherDisplayName>user</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
     <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application 
-      Id="App"
-      StartPage="default.html">
-
-      <VisualElements
-        DisplayName="Tabata"
-        Logo="images\logo.png"
-        SmallLogo="images\smalllogo.png"
-        Description="Tabata"
-        ForegroundText="light"
-        BackgroundColor="#464646">
-
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Tabata" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Tabata" ForegroundText="light" BackgroundColor="#B0171F">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="images\splashscreen.png" />
-
       </VisualElements>
     </Application>
   </Applications>
-
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
-
 </Package>

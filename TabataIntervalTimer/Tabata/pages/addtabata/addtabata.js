@@ -22,7 +22,6 @@
         },
 
         checkpoint: function () {
-            
             var tabata = {};
             tabata.name = document.getElementById("tabata-name-input").value;
             tabata.intervals = document.getElementById("wo-intervals").value;
@@ -30,6 +29,10 @@
             tabata.work = document.getElementById("wo-work").value;
             tabata.prepare = document.getElementById("wo-prepare").value;
             app.sessionState.tabata = tabata;
+
+            
         }
+        
+            
     });
 })();

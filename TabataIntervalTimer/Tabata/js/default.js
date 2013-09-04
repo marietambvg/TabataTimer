@@ -11,44 +11,45 @@
     var nav = WinJS.Navigation;
 
     app.addEventListener("activated", function (args) {
-
-        var url = null;
         if (args.detail.kind === activation.ActivationKind.launch) {
-
-            url = WinJS.Application.sessionState.lastUrl || "default.html";
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
-                // TODO: This application has been newly launched. Initialize
-                // your application here.
+               
             } else {
-                // TODO: This application has been reactivated from suspension.
-                // Restore application state here.
+                
             }
 
             if (app.sessionState.history) {
                 nav.history = app.sessionState.history;
+                nav.tabata = app.sessionState.tabata;
             }
             args.setPromise(WinJS.UI.processAll().then(function () {
                 if (nav.location) {
                     nav.history.current.initialPlaceholder = true;
-                    return nav.navigate(nav.location, nav.state);
+                    return nav.navigate(nav.location, nav.state,nav.tabata);
                 } else {
                     return nav.navigate(Application.navigator.home);
                 }
             }));
         }
-        
     });
 
-   
+    nav.addEventListener("navigated", function (eventObject) {
+        var url = eventObject.detail.location;
+        var host = document.getElementById("contenthost");
+        // Call unload method on current scenario, if there is one
+        host.winControl && host.winControl.unload && host.winControl.unload();
+        WinJS.Utilities.empty(host);
+        eventObject.detail.setPromise(WinJS.UI.Pages.render(url, host, eventObject.detail.state).then(function () {
+            WinJS.Application.sessionState.lastUrl = url;
+        }));
+    });
 
     app.oncheckpoint = function (args) {
-        // TODO: This application is about to be suspended. Save any state
-        // that needs to persist across suspensions here. If you need to 
-        // complete an asynchronous operation before your application is 
-        // suspended, call args.setPromise().
+       
+        //var host = document.getElementById("contenthost");
+        //host.winControl && host.winControl.checkpoint && host.winControl.checkpoint();
         app.sessionState.history = nav.history;
-        var host = document.getElementById("contenthost");
-        host.winControl && host.winControl.checkpoint && host.winControl.checkpoint();
+        app.sessionState.tabata = nav.tabata;
     };
 
     app.start();
