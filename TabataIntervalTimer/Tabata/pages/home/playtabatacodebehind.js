@@ -2,18 +2,20 @@
 (function () {
     var state;
     var tabatasCounter = 1;
+    var player = document.getElementById("player");
     //var 
 
     var stopWorkout=function(){
     
         state = "stop";
         tabatasCounter = 0;
+        player.pause();
          return state;
     
     }
     var startTimer = function (currentTabata, startButton) {
 
-        var player = document.getElementById("player");
+       
         var tabatasCounterElement = document.getElementById("tabatas-count");
         var tabatasCounter = 1;
         tabatasCounterElement.innerHTML = tabatasCounter;
@@ -107,7 +109,8 @@
 
                 workRestCycle().then(function () {
                     currentTabata.intervals -= 1;
-                    if ((currentTabata.intervals <= 0)||(state=="stop")) {
+                    if ((currentTabata.intervals <= 0) || (state == "stop")) {
+                        player.pause();
                         complete();
                     }
                     else {
