@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="4925cae2-c76d-4af8-9c05-b646e3f1099c" Version="1.0.0.0" Publisher="CN=user" />
+  <Identity Name="63460MarietaGeorgieva.Intervalworkouttimer" Version="1.0.0.0" Publisher="CN=54D83427-37D7-46EF-9802-46043E940E8E" />
   <Properties>
-    <DisplayName>Tabata</DisplayName>
-    <PublisherDisplayName>user</PublisherDisplayName>
-    <Logo>images\storelogo.png</Logo>
+    <DisplayName>My Workout Timer</DisplayName>
+    <PublisherDisplayName>Marieta Georgieva</PublisherDisplayName>
+    <Logo>images\logo-50x50.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
@@ -18,6 +18,10 @@
       <VisualElements DisplayName="My Workout Timer" Logo="images\logo-150x150.png" SmallLogo="images\logo-30x30.png" Description="Workout Timer" ForegroundText="light" BackgroundColor="#a91049">
         <DefaultTile ShowName="allLogos" WideLogo="images\logo-310x150.png" />
         <SplashScreen Image="images\splash-screen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
       </VisualElements>
     </Application>
   </Applications>

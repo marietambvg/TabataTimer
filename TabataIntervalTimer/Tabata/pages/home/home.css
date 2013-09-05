@@ -173,12 +173,17 @@
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
+    .homepage .titlearea {
+        padding-left: 60px;
+    }
+
     .homepage section[role=main] {
-        margin-left: 20px;
+        margin-left: 80px;
         margin-right: 20px;
+        margin-top: -10px;
         padding-bottom: 50px;
-        height: 100%;
-        width: 90%;
+        height: 95%;
+        width: 85%;
         text-align: center;
     }
 
@@ -205,14 +210,14 @@
             position: absolute;
             top: 60%;
             left: auto;
-            right: auto;
+            right: 150px;
         }
 
         .homepage .counter-wrap div {
-            font: normal 150pt Segoe UI Light;
+            font: normal 300pt Segoe UI Light;
             position: absolute;
-            left: auto;
+            left: 100px;
             right: auto;
-            bottom: 120px;
+            bottom: 500px;
         }
 }

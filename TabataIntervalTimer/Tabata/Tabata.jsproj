@@ -47,7 +47,9 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>Tabata_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Tabata_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>0788FC215E3E719A02F898C5F641E0AA5E37D28B</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -58,6 +60,7 @@
     <Content Include="images\logo-24x24.png" />
     <Content Include="images\logo-30x30.png" />
     <Content Include="images\logo-310x150.png" />
+    <Content Include="images\logo-50x50.png" />
     <Content Include="images\splash-screen.png" />
     <Content Include="js\defaultcodebehind.js" />
     <Content Include="js\datalayer.js" />
@@ -67,6 +70,8 @@
     <Content Include="js\navigator.js" />
     <Content Include="js\roamingdata.js" />
     <Content Include="js\viewmodels.js" />
+    <None Include="Tabata_StoreKey.pfx" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="pages\addtabata\addtabata.css" />
     <Content Include="pages\addtabata\addtabata.html" />
     <Content Include="pages\addtabata\addtabata.js" />

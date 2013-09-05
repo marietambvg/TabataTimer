@@ -98,7 +98,7 @@ body {
 
         .fragment header[role=banner] .win-backbutton {
             -ms-grid-column: 1;
-            margin: 26px 5px 0;
+            margin: 40px 5px 0;
         }
 
             .fragment header[role=banner] .win-backbutton:disabled {
@@ -107,7 +107,7 @@ body {
 
         .fragment header[role=banner] .titlearea {
             -ms-grid-column: 2;
-            margin: 18px 5px 0;
+            margin: 18px 80px 0 5px;
         }
 
     .fragment section[role=main] {
