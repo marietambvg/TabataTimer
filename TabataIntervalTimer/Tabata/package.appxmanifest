@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Tabata" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Tabata" ForegroundText="light" BackgroundColor="#a91049">
-        <DefaultTile ShowName="allLogos" />
+      <VisualElements DisplayName="My Workout Timer" Logo="images\logo-150x150.png" SmallLogo="images\logo-30x30.png" Description="Workout Timer" ForegroundText="light" BackgroundColor="#a91049">
+        <DefaultTile ShowName="allLogos" WideLogo="images\logo-310x150.png" />
         <SplashScreen Image="images\splash-screen.png" />
       </VisualElements>
     </Application>
