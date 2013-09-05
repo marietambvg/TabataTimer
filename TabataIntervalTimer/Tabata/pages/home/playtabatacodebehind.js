@@ -16,9 +16,9 @@
     var startTimer = function (currentTabata, startButton) {
 
        
-        var tabatasCounterElement = document.getElementById("tabatas-count");
+        //var tabatasCounterElement = document.getElementById("tabatas-count");
         var tabatasCounter = 1;
-        tabatasCounterElement.innerHTML = tabatasCounter;
+        //tabatasCounterElement.innerHTML = tabatasCounter;
         var startButtonElement = document.getElementById("start");
 
         var intervalID = 0;
@@ -35,7 +35,7 @@
             startButtonElement.style.visibility = "hidden";
             tabatasCycle().then(function () {
                 tabatasCounter = 1;
-                tabatasCounterElement.innerHTML = tabatasCounter;
+                //tabatasCounterElement.innerHTML = tabatasCounter;
                 startButtonElement.style.visibility = "visible";
             });
         });
@@ -78,7 +78,7 @@
                     currentTabata.prepare = prepareTime;
                     currentTabata.intervals = intervals;
                     tabatasCounter -= 1;
-                    tabatasCounterElement.innerHTML = tabatasCounter;
+                    //tabatasCounterElement.innerHTML = tabatasCounter;
                     if ((tabatasCounter <= 0)||(state=="stop")) {
                        complete();
                     }

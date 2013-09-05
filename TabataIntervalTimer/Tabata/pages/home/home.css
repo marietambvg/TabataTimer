@@ -35,11 +35,11 @@
 }
 
 #work-wrap {
-    background-color: #bd1313
+    background-color: #d01515;
 }
 
 #rest-wrap {
-    background-color: #96ca1d;
+    background-color: #7aa518;
 }
 
 .counter-wrap {
@@ -101,6 +101,10 @@
     height: 210px;
     background-color: #a91049;
 }
+
+    .win-item:nth-child(odd) {
+        background-color: #cb1459;
+    }
 
 .description-holder {
     margin: 0;
@@ -164,7 +168,7 @@
             position: absolute;
             left: auto;
             right: auto;
-            bottom: 30px;
+            bottom: 120px;
         }
 }
 
@@ -209,6 +213,6 @@
             position: absolute;
             left: auto;
             right: auto;
-            bottom: 30px;
+            bottom: 120px;
         }
 }

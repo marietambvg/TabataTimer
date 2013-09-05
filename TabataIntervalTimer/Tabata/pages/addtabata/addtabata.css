@@ -47,7 +47,7 @@
 }
 
 .addtabata input[type=text] {
-    width: 350px;
+    width: 345px;
 }
 
 .addtabata #savebtn {
@@ -78,7 +78,7 @@
     }
 
     .addtabata input[type=text] {
-        width: 80%;
+        width: 78%;
     }
 
     .addtabata input[type=range] {
@@ -106,7 +106,7 @@
     }
 
     .addtabata input[type=text] {
-        width: 80%;
+        width: 78%;
     }
 
     .addtabata input[type=range] {
