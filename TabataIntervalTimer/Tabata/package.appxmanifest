@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="63460MarietaGeorgieva.Intervalworkouttimer" Version="1.0.0.0" Publisher="CN=54D83427-37D7-46EF-9802-46043E940E8E" />
+  <Identity Name="63460MarietaGeorgieva.Intervalworkouttimer" Version="1.0.0.1" Publisher="CN=54D83427-37D7-46EF-9802-46043E940E8E" />
   <Properties>
     <DisplayName>My Workout Timer</DisplayName>
     <PublisherDisplayName>Marieta Georgieva</PublisherDisplayName>
@@ -23,9 +23,20 @@
           <Rotation Preference="landscape" />
         </InitialRotationPreference>
       </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <FileType>.mp4</FileType>
+              <FileType>.mp3</FileType>
+              <FileType>.avi</FileType>
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
-    <Capability Name="internetClient" />
+    <Capability Name="musicLibrary" />
   </Capabilities>
 </Package>
