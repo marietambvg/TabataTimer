@@ -16,9 +16,9 @@
 .info-wrap {
     position: absolute;
     z-index: 1;
-    left: 0px;
-    top: -200px;
-    margin: 250px 100px 0;
+    width: 30%;
+    margin: 50px 20px 0;
+    text-align: center;
 }
 
 /*.basic-tabata-template .description-value {
@@ -56,14 +56,17 @@
         font: normal 72pt Segoe UI Light;
         display: inline-block;
         float: left;
-        margin: 100px 20px 0 320px;
+        margin: 100px 0 0 26%;
+        width: 24%;
+        text-align: center;
     }
 
     .counter-wrap div {
         font: normal 250pt Segoe UI Light;
         display: inline-block;
-        float: right;
-        margin: -60px 100px 0 50px;
+        width: 46%;
+        margin: -60px 0 0;
+        text-align: center;
     }
 
 #start {
@@ -119,6 +122,9 @@
     padding: 0;
     text-align: center;
     font: normal 20pt Segoe UI Light;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 .description-name {
@@ -144,8 +150,11 @@
     .homepage .info-wrap {
         position: absolute;
         z-index: 1;
-        left: -30px;
-        top: -230px;
+        left: auto;
+        top: auto;
+        margin: 20px 10px 0;
+        width: 90%;
+        overflow: hidden;
     }
 
     .homepage .counter-wrap {
@@ -156,19 +165,22 @@
     }
 
         .homepage .counter-wrap h3 {
-            font: normal 72pt Segoe UI Light;
+            font: normal 42pt Segoe UI Light;
             position: absolute;
-            top: 60%;
-            left: auto;
-            right: auto;
+            margin: 0;
+            bottom: 15%;
+            left: 10px;
+            width: 95%;
+            text-align: center;
         }
 
         .homepage .counter-wrap div {
-            font: normal 150pt Segoe UI Light;
+            font: normal 130pt Segoe UI Light;
             position: absolute;
-            left: auto;
-            right: auto;
-            bottom: 120px;
+            left: 5px;
+            bottom: 30%;
+            width: 95%;
+            text-align: center;
         }
 }
 
@@ -194,8 +206,11 @@
     .homepage .info-wrap {
         position: absolute;
         z-index: 1;
-        left: -30px;
-        top: -230px;
+        left: auto;
+        top: auto;
+        margin: 20px 10px 0;
+        width: 95%;
+        overflow: hidden;
     }
 
     .homepage .counter-wrap {
@@ -208,16 +223,37 @@
         .homepage .counter-wrap h3 {
             font: normal 72pt Segoe UI Light;
             position: absolute;
-            top: 60%;
-            left: auto;
-            right: 150px;
+            margin: 0;
+            bottom: 10%;
+            left: 10px;
+            width: 95%;
+            text-align: center;
         }
 
         .homepage .counter-wrap div {
             font: normal 300pt Segoe UI Light;
             position: absolute;
-            left: 100px;
-            right: auto;
-            bottom: 500px;
+            margin: 0;
+            left: 10px;
+            bottom: 30%;
+            width: 95%;
+            text-align: center;
         }
+
+    .description-value {
+        color: white;
+        margin: -6px 0 0;
+        padding: 0;
+        text-align: center;
+        font: normal 28pt Segoe UI Light;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+    }
+
+    .description-name {
+        margin: -6px 0 4px;
+        font: normal 11pt Segoe UI;
+        color: rgba(0, 0, 0, 1);
+    }
 }
